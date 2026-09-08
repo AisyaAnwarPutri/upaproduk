@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - UPA Produk Unggulan Politeknik Negeri Banyuwangi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Terintegrasi -->
+    <header class="w-full z-50 sticky top-0 shadow-md">
+        
+        <!-- Top Bar Informasi (Sesuai Desain Referensi) -->
+        <div class="bg-[#0f2444] text-white py-2 hidden md:block border-b border-[#1a3668]">
+            <div class="container mx-auto px-4 md:px-6 flex justify-center lg:justify-start items-center space-x-6 text-sm tracking-wide">
+                
+                <!-- Alamat -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Jl. Raya Jember KM 13, Banyuwangi</span>
+                </div>
+                
+                <!-- Telepon -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <span>+62 812 3456 7890</span>
+                </div>
+                
+                <!-- Email -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <span>upa@poliwangi.ac.id</span>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    <span>upa_poliwangi</span>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Main Navigasi -->
+        <div class="bg-blue-800 text-white">
+            <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+                <!-- Logo / Judul -->
+                <div>
+                    <a href="#" class="text-xl md:text-2xl font-bold tracking-wider">UPA Produk Unggulan</a>
+                    <p class="text-xs md:text-sm text-blue-200">Politeknik Negeri Banyuwangi</p>
+                </div>
+                
+                <!-- Navigasi Menu Desktop -->
+                <nav class="hidden lg:flex space-x-6 items-center">
+                    <a href="#beranda" class="hover:text-blue-300 font-medium py-2">Beranda</a>
+                    
+                    <!-- Dropdown Profil -->
+                    <div class="relative group">
+                        <button class="hover:text-blue-300 font-medium py-2 flex items-center gap-1">
+                            Profil
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="visi-misi.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Visi & Misi</a>
+                            <a href="struktur-organisasi.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 rounded-b-md">Struktur Organisasi</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Layanan -->
+                    <div class="relative group">
+                        <button class="hover:text-blue-300 font-medium py-2 flex items-center gap-1">
+                            Layanan
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="katalog.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 rounded-t-md">Katalog Produk</a>
+                            <a href="uji-layanan.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 rounded-b-md">Uji Lab / Layanan</a>
+                        </div>
+                    </div>
+
+                    <a href="fasilitas.html" class="hover:text-blue-300 font-medium py-2">Fasilitas</a>
+                    <a href="berita.html" class="hover:text-blue-300 font-medium py-2">Berita</a>
+
+                </nav>
+
+                <!-- Mobile Menu Toggle (Login Dihapus Sesuai Permintaan) -->
+                <div class="lg:hidden">
+                    <button class="text-white hover:text-blue-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Banner Section -->
+    <section id="beranda" class="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">Official Platform</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Sinergi Inovasi & <br> Layanan Uji Terstandarisasi</h1>
+            <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                Wadah publikasi, komersialisasi produk Teaching Factory, serta pusat layanan uji laboratorium berstandar di Politeknik Negeri Banyuwangi.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="katalog.html" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold shadow-lg transition duration-300">Lihat Produk</a>
+                <a href="uji-layanan.html" class="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg font-bold shadow-lg transition duration-300 border border-orange-400">Cari Layanan Lab</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-[#f59e0b] rounded-lg transform rotate-3 opacity-20"></div>
+                    <img src="https://via.placeholder.com/600x450?text=Diskusi+dan+Inovasi" alt="Tentang UPA" class="relative rounded-lg shadow-xl w-full object-cover z-10">
+                </div>
+                <div class="lg:w-1/2">
+                    <h4 class="text-[#f59e0b] font-bold tracking-wider uppercase mb-2">Tentang Organisasi</h4>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-[#0f2444] mb-6">Membangun Sinergi Inovasi Akademik</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        UPA Produk Unggulan merupakan unit strategis di bawah naungan Politeknik Negeri Banyuwangi yang berfokus pada manajemen, publikasi, dan fasilitasi hilirisasi produk hasil riset maupun Teaching Factory (TeFa). 
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Kami berkomitmen untuk menjadi jembatan penghubung yang efektif antara potensi akademik kampus dengan dunia usaha dan dunia industri (DUDI), memastikan setiap inovasi yang lahir dari Poliwangi memiliki nilai guna, legalitas, dan daya saing yang tinggi di masyarakat.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8 border-t border-gray-100 pt-8">
+                        <div>
+                            <h3 class="text-3xl font-bold text-[#0f2444] mb-1">15+</h3>
+                            <p class="text-sm text-gray-500 font-medium">Program Studi Terlibat</p>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-[#0f2444] mb-1">50+</h3>
+                            <p class="text-sm text-gray-500 font-medium">Inovasi Terdokumentasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tugas dan Fungsi -->
+    <section id="tugas-fungsi" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h4 class="text-[#f59e0b] font-bold tracking-wider uppercase mb-2">Fokus Utama</h4>
+                <h2 class="text-3xl font-bold text-[#0f2444]">Tugas dan Layanan Informasi</h2>
+                <div class="w-24 h-1 bg-[#f59e0b] mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 card-hover text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-[#0f2444] rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f2444] mb-3">Manajemen Tefa</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Mendukung pengelolaan dan pengembangan unit Teaching Factory di berbagai program studi agar beroperasi sesuai standar industri dan menghasilkan produk unggulan.
+                    </p>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 card-hover text-center">
+                    <div class="w-16 h-16 mx-auto bg-yellow-50 text-[#f59e0b] rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f2444] mb-3">Fasilitasi Legalitas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Memberikan pendampingan dalam pengurusan legalitas produk inovasi, termasuk perizinan edar, sertifikasi halal, dan pengurusan Hak Kekayaan Intelektual (HKI).
+                    </p>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 card-hover text-center">
+                    <div class="w-16 h-16 mx-auto bg-green-50 text-green-600 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f2444] mb-3">Publikasi & Kemitraan</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Menyelenggarakan diseminasi informasi produk unggulan kepada masyarakat luas serta menjalin kemitraan strategis untuk hilirisasi teknologi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Berita Terbaru -->
+    <section id="berita" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h4 class="text-[#f59e0b] font-bold tracking-wider uppercase mb-2">Pusat Informasi</h4>
+                <h2 class="text-3xl font-bold text-[#0f2444]">Berita & Agenda Terkini</h2>
+                <div class="w-24 h-1 bg-[#f59e0b] mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artikel 1 -->
+                <article class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://via.placeholder.com/600x400?text=Kegiatan+Pameran" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            15 September 2026
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0f2444] mb-3 leading-tight"><a href="#" class="hover:text-[#f59e0b]">Pameran Inovasi Mahasiswa Poliwangi Tarik Perhatian Industri Lokal</a></h3>
+                        <p class="text-sm text-gray-600 line-clamp-3">UPA Produk Unggulan turut serta dalam memfasilitasi puluhan karya mahasiswa dan dosen dalam gelaran expo tahunan kampus.</p>
+                    </div>
+                </article>
+
+                <!-- Artikel 2 -->
+                <article class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://via.placeholder.com/600x400?text=Kunjungan+Industri" alt="Berita 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z"></path></svg>
+                            10 September 2026
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0f2444] mb-3 leading-tight"><a href="#" class="hover:text-[#f59e0b]">Kunjungan Delegasi BUMN ke Fasilitas Teaching Factory</a></h3>
+                        <p class="text-sm text-gray-600 line-clamp-3">Meningkatkan peluang hilirisasi, sejumlah delegasi industri nasional meninjau proses produksi di fasilitas Tefa manufaktur Poliwangi.</p>
+                    </div>
+                </article>
+                
+                <!-- Artikel 3 -->
+                <article class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://via.placeholder.com/600x400?text=Workshop+Legalitas" alt="Berita 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            5 September 2026
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0f2444] mb-3 leading-tight"><a href="#" class="hover:text-[#f59e0b]">Workshop Percepatan Paten dan Hak Cipta bagi Dosen</a></h3>
+                        <p class="text-sm text-gray-600 line-clamp-3">Memberikan pemahaman komprehensif terkait prosedur pendaftaran Kekayaan Intelektual untuk melindungi karya akademik.</p>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-[#0f2444] text-[#0f2444] font-bold py-2 px-8 rounded hover:bg-[#0f2444] hover:text-white transition">LIHAT SEMUA BERITA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-[#0f2444] text-gray-300 pt-16 pb-8 border-t-4 border-[#f59e0b]">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Identitas -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="https://via.placeholder.com/50x50?text=Logo" alt="Logo" class="h-12 w-12 rounded-full bg-white">
+                        <div>
+                            <h3 class="text-xl font-bold text-white leading-tight">UPA PRODUK UNGGULAN</h3>
+                            <span class="text-sm text-gray-400">Politeknik Negeri Banyuwangi</span>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-6 leading-relaxed max-w-md">
+                        Pusat informasi dan manajemen publikasi produk inovasi serta pengembangan Teaching Factory di lingkungan Politeknik Negeri Banyuwangi.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <p class="flex items-start"><svg class="w-5 h-5 text-[#f59e0b] mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Jl. Raya Jember KM 13, Kabat, Banyuwangi, Jawa Timur</p>
+                        <p class="flex items-center"><svg class="w-5 h-5 text-[#f59e0b] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> +62 812 3456 7890</p>
+                        <p class="flex items-center"><svg class="w-5 h-5 text-[#f59e0b] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> upa@poliwangi.ac.id</p>
+                    </div>
+                </div>
+
+                <!-- Tautan Menu -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-12 after:h-0.5 after:bg-[#f59e0b]">Menu Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-[#f59e0b] transition">Beranda</a></li>
+                        <!-- <li><a href="tentang.html" class="hover:text-[#f59e0b] transition">Tentang Kami</a></li>
+                        <li><a href="tugas-fungsi.html" class="hover:text-[#f59e0b] transition">Tugas & Fungsi</a></li>
+                        <li><a href="berita.html" class="hover:text-[#f59e0b] transition">Berita Terkini</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Tautan Institusi -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-12 after:h-0.5 after:bg-[#f59e0b]">Tautan Terkait</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-[#f59e0b] transition">Website Utama Poliwangi</a></li>
+                        <li><a href="struktur-organisasi.html" class="hover:text-[#f59e0b] transition">P3M Poliwangi</a></li>
+                        <li><a href="direktorat-vokasi.html" class="hover:text-[#f59e0b] transition">Direktorat Vokasi Kemdikbud</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#1a3668] mt-8 pt-8 text-center text-xs md:text-sm text-gray-400">
+                <p>&copy; 2026 UPA Produk Unggulan - Politeknik Negeri Banyuwangi. Hak Cipta Dilindungi Undang-Undang.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
