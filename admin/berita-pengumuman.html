@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Berita & Pengumuman - Admin UPA Produk Unggulan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex h-screen overflow-hidden">
+
+    <!-- Sidebar Navigation -->
+
+    <aside class="w-64 bg-[#0f2444] text-white flex flex-col justify-between hidden md:flex">
+        <div>
+            <!-- Sidebar Header / Logo -->
+            <div class="p-5 border-b border-gray-700 flex items-center gap-3">
+                <div
+                    class="w-9 h-9 bg-[#f59e0b] rounded-lg flex items-center justify-center font-bold text-[#0f2444] text-lg">
+                    U
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm leading-tight">UPA Unggulan</h1>
+                    <p class="text-[10px] text-gray-400">Panel Admin Poliwangi</p>
+                </div>
+            </div>
+    
+            <!-- Menu Links -->
+            <nav class="p-4 space-y-1 text-sm">
+                <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">Menu Utama</div>
+    
+                <a href="index.html"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M107 107a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 1.414L3.414 9H19a1 1 0 110 2H3.414l5.293 5.293a1 1 0 010 1.414z">
+                        </path>
+                        <path
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                        </path>
+                    </svg>
+                    Dashboard
+                </a>
+    
+    
+                <a href="uji-lab2.html"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    Kelola Uji Lab
+                </a>
+    
+                <a href="katalog.html"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    Katalog Produk
+                </a>
+    
+                <a href="berita-pengumuman.html" class="flex items-center gap-3 px-3 py-2.5 bg-[#1e40af] text-white font-medium rounded-lg transition">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                        </path>
+                    </svg>
+                    Berita & Pengumuman
+                </a>
+    
+                <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2 px-3">Pengaturan
+                </div>
+    
+                <a href="pengaturan.html"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                    </svg>
+                    Pengaturan Sistem
+                </a>
+            </nav>
+        </div>
+    
+        <!-- Sidebar Footer / User Info -->
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs text-white">
+                    AD</div>
+                <div>
+                    <p class="text-xs font-semibold">Admin Lab</p>
+                    <p class="text-[10px] text-gray-400">admin@poliwangi.ac.id</p>
+                </div>
+            </div>
+            <a href="#" class="text-gray-400 hover:text-red-400 transition" title="Logout">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- <aside class="w-64 bg-[#0f2444] text-white flex flex-col justify-between hidden md:flex">
+        <div>
+            <div class="p-5 border-b border-gray-700 flex items-center gap-3">
+                <div
+                    class="w-9 h-9 bg-[#f59e0b] rounded-lg flex items-center justify-center font-bold text-[#0f2444] text-lg">
+                    U
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm leading-tight">UPA Unggulan</h1>
+                    <p class="text-[10px] text-gray-400">Panel Admin Poliwangi</p>
+                </div>
+            </div>
+
+            <nav class="p-4 space-y-1 text-sm">
+                <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">Menu Utama</div>
+
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M107 107a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 1.414L3.414 9H19a1 1 0 110 2H3.414l5.293 5.293a1 1 0 010 1.414z">
+                        </path>
+                        <path
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                        </path>
+                    </svg>
+                    Dashboard
+                </a>
+
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    Kelola Uji Lab
+                </a>
+
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    Katalog Produk
+                </a>
+
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 bg-[#1e40af] text-white font-medium rounded-lg transition">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                        </path>
+                    </svg>
+                    Berita & Pengumuman
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs text-white">
+                    AD</div>
+                <div>
+                    <p class="text-xs font-semibold">Admin Lab</p>
+                    <p class="text-[10px] text-gray-400">admin@poliwangi.ac.id</p>
+                </div>
+            </div>
+        </div>
+    </aside> -->
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col overflow-y-auto">
+
+        <!-- Header Bar -->
+        <header class="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+            <div>
+                <h2 class="text-lg font-bold text-[#0f2444]">Kelola Berita & Pengumuman</h2>
+                <p class="text-xs text-gray-500">Publikasikan artikel, pengumuman publik, atau agenda kegiatan UPA.</p>
+            </div>
+
+            <button onclick="openModal()"
+                class="bg-[#1e40af] hover:bg-blue-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg flex items-center gap-2 transition shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Tambah Konten
+            </button>
+        </header>
+
+        <!-- Main Content View -->
+        <main class="p-6 space-y-6">
+
+            <!-- Filter & Search Bar -->
+            <div
+                class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                    <!-- Search Input -->
+                    <div class="relative flex-1 md:w-64">
+                        <input type="text" id="searchInput" oninput="renderTable()"
+                            placeholder="Cari judul atau penulis..."
+                            class="w-full bg-gray-50 text-xs text-gray-700 pl-9 pr-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition">
+                        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Filter Kategori Dynamic -->
+                    <select id="filterCategory" onchange="renderTable()"
+                        class="bg-gray-50 border border-gray-200 text-xs rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-blue-500">
+                        <option value="">Semua Kategori</option>
+                    </select>
+
+                    <!-- Filter Status -->
+                    <select id="filterStatus" onchange="renderTable()"
+                        class="bg-gray-50 border border-gray-200 text-xs rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-blue-500">
+                        <option value="">Semua Status</option>
+                        <option value="Diterbitkan">Diterbitkan</option>
+                        <option value="Draft">Draft</option>
+                    </select>
+                </div>
+
+                <div class="text-xs text-gray-500 w-full md:w-auto text-right">
+                    Total: <span id="totalData" class="font-bold text-gray-800">0 Konten</span>
+                </div>
+            </div>
+
+            <!-- Table Berita & Pengumuman -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead
+                            class="bg-gray-50 text-gray-500 border-b border-gray-200 uppercase tracking-wider font-semibold">
+                            <tr>
+                                <th class="py-3.5 px-5">Judul Konten</th>
+                                <th class="py-3.5 px-5">Kategori / Tipe</th>
+                                <th class="py-3.5 px-5">Tanggal Terbit</th>
+                                <th class="py-3.5 px-5">Status</th>
+                                <th class="py-3.5 px-5 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody" class="divide-y divide-gray-100">
+                            <!-- Data di-render via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Modal Form (Tambah & Edit) -->
+    <div id="newsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl max-w-lg w-full p-6 shadow-xl relative max-h-[90vh] overflow-y-auto">
+            <h3 id="modalTitle" class="font-bold text-lg text-[#0f2444] mb-4">Tambah Konten Baru</h3>
+
+            <form id="newsForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <input type="hidden" id="editId">
+
+                <!-- Judul Konten -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Judul Berita / Pengumuman</label>
+                    <input type="text" id="newsTitle" placeholder="Contoh: Pembukaan Layanan Uji Lab Baru" required
+                        class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+
+                <!-- Kategori / Tipe (Ketik atau Pilih) -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Kategori / Tipe Konten</label>
+                    <input list="categoryDatalist" id="newsCategory"
+                        placeholder="Ketik kategori baru atau pilih dari daftar..." required
+                        class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    <datalist id="categoryDatalist">
+                        <!-- Opsi kategori terisi otomatis via JS -->
+                    </datalist>
+                    <span class="text-[10px] text-gray-400 mt-1 block">*Kategori baru yang Anda ketik akan otomatis
+                        tersimpan dalam pilihan.</span>
+                </div>
+
+                <!-- Grid Tanggal & Penulis -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Tanggal Terbit</label>
+                        <input type="date" id="newsDate" required
+                            class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Penulis / Admin</label>
+                        <input type="text" id="newsAuthor" placeholder="Humas Poliwangi" required
+                            class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Status Publikasi</label>
+                    <select id="newsStatus"
+                        class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <option value="Diterbitkan">Diterbitkan</option>
+                        <option value="Draft">Draft</option>
+                    </select>
+                </div>
+
+                <!-- Ringkasan Konten -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Ringkasan / Isi Singkat</label>
+                    <textarea id="newsSummary" rows="3"
+                        placeholder="Tuliskan ringkasan informasi yang ingin disampaikan..."
+                        class="w-full text-xs p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                </div>
+
+                <!-- Upload Gambar Sampul & Preview -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Upload Gambar Sampul</label>
+                    <input type="file" id="newsImage" accept="image/*" onchange="previewImage(event)"
+                        class="w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <div class="mt-2 flex items-center gap-3">
+                        <img id="imagePreview" src="https://via.placeholder.com/100" alt="Preview"
+                            class="w-16 h-12 object-cover rounded-lg border border-gray-200">
+                        <span class="text-[10px] text-gray-400">Preview sampul berita</span>
+                    </div>
+                </div>
+
+                <!-- Form Action Buttons -->
+                <div class="flex justify-end gap-2 pt-3 border-t border-gray-100">
+                    <button type="button" onclick="closeModal()"
+                        class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition">Batal</button>
+                    <button type="submit"
+                        class="px-4 py-2 bg-[#1e40af] hover:bg-blue-800 text-white text-xs font-semibold rounded-lg transition">Simpan
+                        Konten</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initial Mock Data untuk Berita & Pengumuman
+        let articles = [
+            {
+                id: 1,
+                title: 'UPA Produk Unggulan Resmikan Peralatan Uji Lab Terbaru 2026',
+                category: 'Berita Kegiatan',
+                date: '2026-09-01',
+                author: 'Humas Poliwangi',
+                summary: 'Penambahan instrumen modern untuk mempercepat proses uji proksimat dan analisis kualitas pangan lokal.',
+                status: 'Diterbitkan',
+                image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=150&auto=format&fit=crop&q=60'
+            },
+            {
+                id: 2,
+                title: 'Pengumuman Jadwal Layanan Pengujian Selama Masa Libur Akademik',
+                category: 'Pengumuman Resmi',
+                date: '2026-08-28',
+                author: 'Admin UPA',
+                summary: 'Informasi penyesuaian jam operasional penerimaan sampel uji selama pekan libur perkuliahan.',
+                status: 'Diterbitkan',
+                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=150&auto=format&fit=crop&q=60'
+            },
+            {
+                id: 3,
+                title: 'Pelatihan Sertifikasi Hasil Uji untuk UMKM Binaan Banyuwangi',
+                category: 'Agenda Workshop',
+                date: '2026-09-15',
+                author: 'Tim Laboratorium',
+                summary: 'Program pendampingan pembuatan dokumen SHU bagi para pelaku usaha kecil di sekitar wilayah Banyuwangi.',
+                status: 'Draft',
+                image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=150&auto=format&fit=crop&q=60'
+            }
+        ];
+
+        let categoriesList = ['Berita Kegiatan', 'Pengumuman Resmi', 'Agenda Workshop'];
+        let currentImageBase64 = '';
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCategoryOptions();
+            renderTable();
+        });
+
+        // Sync categories to datalist and filter dropdown
+        function updateCategoryOptions() {
+            articles.forEach(item => {
+                if (item.category && !categoriesList.includes(item.category)) {
+                    categoriesList.push(item.category);
+                }
+            });
+
+            const datalist = document.getElementById('categoryDatalist');
+            const filterSelect = document.getElementById('filterCategory');
+            const currentFilter = filterSelect.value;
+
+            // Render Form Datalist
+            datalist.innerHTML = categoriesList.map(cat => `<option value="${cat}">`).join('');
+
+            // Render Filter Select
+            filterSelect.innerHTML = `<option value="">Semua Kategori</option>` +
+                categoriesList.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+
+            filterSelect.value = currentFilter;
+        }
+
+        // Render Table Data
+        function renderTable() {
+            const tableBody = document.getElementById('tableBody');
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            const filterCategory = document.getElementById('filterCategory').value;
+            const filterStatus = document.getElementById('filterStatus').value;
+
+            const filteredData = articles.filter(item => {
+                const matchSearch = item.title.toLowerCase().includes(searchValue) || item.author.toLowerCase().includes(searchValue);
+                const matchCategory = filterCategory === '' || item.category === filterCategory;
+                const matchStatus = filterStatus === '' || item.status === filterStatus;
+                return matchSearch && matchCategory && matchStatus;
+            });
+
+            document.getElementById('totalData').innerText = `${filteredData.length} Konten`;
+
+            if (filteredData.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="py-8 text-center text-gray-400">Tidak ada berita atau pengumuman ditemukan.</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tableBody.innerHTML = filteredData.map(item => `
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="py-4 px-5">
+                        <div class="flex items-center gap-3">
+                            <img src="${item.image}" alt="${item.title}" class="w-12 h-10 object-cover rounded-lg border border-gray-200">
+                            <div>
+                                <span class="font-bold text-gray-800 block line-clamp-1 max-w-sm">${item.title}</span>
+                                <span class="text-[10px] text-gray-400">Oleh: ${item.author}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-4 px-5 font-medium text-gray-700">${item.category}</td>
+                    <td class="py-4 px-5 text-gray-600">${formatDate(item.date)}</td>
+                    <td class="py-4 px-5">
+                        <span class="${item.status === 'Diterbitkan' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'} px-2.5 py-1 rounded-md font-bold text-[10px]">
+                            ${item.status}
+                        </span>
+                    </td>
+                    <td class="py-4 px-5 text-center">
+                        <div class="flex items-center justify-center gap-2">
+                            <button onclick="editArticle(${item.id})" class="p-1.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition" title="Edit Konten">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            </button>
+                            <button onclick="deleteArticle(${item.id})" class="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-md transition" title="Hapus Konten">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Format Date Helper
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateStr).toLocaleDateString('id-ID', options);
+        }
+
+        // Preview uploaded image
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    currentImageBase64 = e.target.result;
+                    document.getElementById('imagePreview').src = currentImageBase64;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Open Modal (Add Mode)
+        function openModal() {
+            document.getElementById('editId').value = '';
+            document.getElementById('newsForm').reset();
+            document.getElementById('modalTitle').innerText = 'Tambah Konten Baru';
+            document.getElementById('newsDate').value = new Date().toISOString().split('T')[0];
+            currentImageBase64 = 'https://via.placeholder.com/100';
+            document.getElementById('imagePreview').src = currentImageBase64;
+            document.getElementById('newsModal').classList.remove('hidden');
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('newsModal').classList.add('hidden');
+        }
+
+        // Add or Update Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const editId = document.getElementById('editId').value;
+            const title = document.getElementById('newsTitle').value;
+            const category = document.getElementById('newsCategory').value.trim();
+            const date = document.getElementById('newsDate').value;
+            const author = document.getElementById('newsAuthor').value;
+            const status = document.getElementById('newsStatus').value;
+            const summary = document.getElementById('newsSummary').value;
+
+            // Save new category to list if unique
+            if (category && !categoriesList.includes(category)) {
+                categoriesList.push(category);
+            }
+
+            if (editId) {
+                // Update Existing Data
+                const index = articles.findIndex(a => a.id == editId);
+                if (index !== -1) {
+                    articles[index].title = title;
+                    articles[index].category = category;
+                    articles[index].date = date;
+                    articles[index].author = author;
+                    articles[index].status = status;
+                    articles[index].summary = summary;
+                    if (currentImageBase64 && currentImageBase64 !== 'https://via.placeholder.com/100') {
+                        articles[index].image = currentImageBase64;
+                    }
+                }
+            } else {
+                // Add New Data
+                const newArticle = {
+                    id: Date.now(),
+                    title,
+                    category,
+                    date,
+                    author,
+                    status,
+                    summary,
+                    image: currentImageBase64 !== 'https://via.placeholder.com/100' ? currentImageBase64 : 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=150&auto=format&fit=crop&q=60'
+                };
+                articles.push(newArticle);
+            }
+
+            updateCategoryOptions();
+            renderTable();
+            closeModal();
+        }
+
+        // Edit Handler
+        function editArticle(id) {
+            const item = articles.find(a => a.id === id);
+            if (!item) return;
+
+            document.getElementById('editId').value = item.id;
+            document.getElementById('newsTitle').value = item.title;
+            document.getElementById('newsCategory').value = item.category;
+            document.getElementById('newsDate').value = item.date;
+            document.getElementById('newsAuthor').value = item.author;
+            document.getElementById('newsStatus').value = item.status;
+            document.getElementById('newsSummary').value = item.summary || '';
+
+            currentImageBase64 = item.image;
+            document.getElementById('imagePreview').src = item.image;
+
+            document.getElementById('modalTitle').innerText = 'Edit Berita / Pengumuman';
+            document.getElementById('newsModal').classList.remove('hidden');
+        }
+
+        // Delete Handler
+        function deleteArticle(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus konten ini?')) {
+                articles = articles.filter(a => a.id !== id);
+                updateCategoryOptions();
+                renderTable();
+            }
+        }
+    </script>
+</body>
+
+</html>

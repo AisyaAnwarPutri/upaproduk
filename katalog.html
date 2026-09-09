@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - UPA Produk Unggulan Politeknik Negeri Banyuwangi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Terintegrasi -->
+    <header class="w-full z-50 sticky top-0 shadow-md">
+        <!-- Top Bar Informasi -->
+        <div class="bg-[#0f2444] text-white py-2 hidden md:block border-b border-[#1a3668]">
+            <div
+                class="container mx-auto px-4 md:px-6 flex justify-center lg:justify-start items-center space-x-6 text-sm tracking-wide">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Jl. Raya Jember KM 13, Banyuwangi</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                        </path>
+                    </svg>
+                    <span>+62 812 3456 7890</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <span>upa@poliwangi.ac.id</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigasi -->
+        <div class="bg-blue-800 text-white">
+            <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="text-xl md:text-2xl font-bold tracking-wider">UPA Produk Unggulan</a>
+                    <p class="text-xs md:text-sm text-blue-200">Politeknik Negeri Banyuwangi</p>
+                </div>
+
+                <nav class="hidden lg:flex space-x-6 items-center">
+                    <a href="index.html" class="hover:text-blue-300 font-medium py-2">Beranda</a>
+
+                    <div class="relative group">
+                        <button class="hover:text-blue-300 font-medium py-2 flex items-center gap-1">
+                            Profil
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="visi-misi.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Visi &
+                                Misi</a>
+                            <a href="struktur-organisasi.html"
+                                class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 rounded-b-md">Struktur
+                                Organisasi</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button class="text-[#f59e0b] font-medium py-2 flex items-center gap-1 nav-link">
+                            Layanan
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="katalog.html"
+                                class="block px-4 py-2 bg-blue-50 text-blue-600 font-semibold rounded-t-md">Katalog
+                                Produk</a>
+                            <a href="uji-layanan2.html" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 rounded-b-md">Uji
+                                Lab / Layanan</a>
+                        </div>
+                    </div>
+
+                    <a href="fasilitas.html" class="hover:text-blue-300 font-medium py-2">Fasilitas</a>
+                    <a href="berita.html" class="hover:text-blue-300 font-medium py-2">Berita</a>
+                </nav>
+
+                <div class="lg:hidden">
+                    <button class="text-white hover:text-blue-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="relative bg-gradient-to-r from-[#0f2444] to-blue-800 text-white py-14 text-center overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-3">Katalog Produk Unggulan</h1>
+            <p class="text-base text-blue-200 max-w-2xl mx-auto">
+                Hasil inovasi, riset terapan, dan produk buatan unit Teaching Factory (TeFa) Politeknik Negeri
+                Banyuwangi.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter & Search Bar -->
+    <section class="py-6 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                    <button
+                        class="bg-[#0f2444] text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">Semua</button>
+                    <button
+                        class="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition">Agroindustri
+                        & Pangan</button>
+                    <button
+                        class="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition">Teknologi
+                        & IoT</button>
+                    <button
+                        class="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition">Manufaktur
+                        & Mesin</button>
+                </div>
+
+                <div class="relative w-full md:w-72">
+                    <input type="text" placeholder="Cari produk..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#f59e0b]">
+                    <svg class="w-4 h-4 text-gray-400 absolute left-3 top-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Produk (3 Kolom x 4 Baris = 12 Produk) -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Baris 1 - Produk 1 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://via.placeholder.com/400x260?text=Kopi+Robusta+Poliwangi"
+                                alt="Kopi Robusta" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-[#f59e0b] text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Agribisnis</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[10px] font-semibold px-2 py-0.5 rounded">Halal
+                                    Certified</span>
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded">P-IRT</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Kopi Robusta
+                                    Banyuwangi Premium</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Kopi buatan Teaching Factory hasil
+                                petikan buah merah olahan petani binaan dosen Poliwangi.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 45.000 <span
+                                    class="text-xs text-gray-400 font-normal">/ 250gr</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 1 - Produk 2 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Smart IoT"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-blue-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Otomasi</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-purple-100 text-purple-700 text-[10px] font-semibold px-2 py-0.5 rounded">Paten
+                                    Terdaftar</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Modul Monitoring
+                                    Pertanian IoT</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Sistem sensor tanah dan cuaca berbasis
+                                Internet of Things untuk efisiensi irigasi lahan pertanian.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 1.850.000</p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 1 - Produk 3 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://wiratech.co.id/wp-content/uploads/2018/09/resep-kerupuk-ikan-tenggiri.jpg" alt="Kerupuk Ikan" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-[#f59e0b] text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Perikanan</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[10px] font-semibold px-2 py-0.5 rounded">Halal
+                                    Certified</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Kerupuk Ikan
+                                    Fortifikasi Kalsium</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Camilan bergizi tinggi hasil olahan
+                                limbah tulang ikan menjadi sumber kalsium alami.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 2 - Produk 4 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Mesin Pencacah" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-gray-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Mesin</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-orange-100 text-orange-700 text-[10px] font-semibold px-2 py-0.5 rounded">Order
+                                    Custom</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Mesin Pencacah Pakan
+                                    Ternak</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Alat mekanisasi peternakan efisiensi
+                                tinggi hemat daya buatan Prodi Teknik Mesin.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 2 - Produk 5 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00"
+                                alt="Batik Gajah Oling" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-pink-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Kerajinan</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded">Hak
+                                    Cipta</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Batik Tulis Motif
+                                    Gajah Oling</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Kain batik tulis khas Banyuwangi
+                                berkualitas tinggi menggunakan pewarna alami lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 2 - Produk 6 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Sari Buah Naga"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-[#f59e0b] text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Pangan</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[10px] font-semibold px-2 py-0.5 rounded">Halal
+                                    Certified</span>
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded">BPOM</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Sari Buah Naga Merah
+                                    Organik</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Minuman sari buah murni kaya antioksidan
+                                tanpa bahan pengawet sintesis.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 3 - Produk 7 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Solar Charger" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Energi</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-purple-100 text-purple-700 text-[10px] font-semibold px-2 py-0.5 rounded">Paten
+                                    Sederhana</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Smart Solar Charger
+                                    Station</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Stasiun pengisian daya portabel bertenaga
+                                surya untuk wilayah publik dan bencana.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 3 - Produk 8 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Drone Sprayer"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-[#0f2444] text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Mekanis</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-orange-100 text-orange-700 text-[10px] font-semibold px-2 py-0.5 rounded">Prototip
+                                    Industri</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Drone Sprayer Pupuk
+                                    Cair</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Drone penyemprot pupuk dan pestisida
+                                otomatis presisi tinggi untuk efisiensi perkebunan.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 3 - Produk 9 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Smart Tourism" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-indigo-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Software</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded">Hak
+                                    Cipta Software</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Aplikasi Smart
+                                    Tourism Banyuwangi</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Platform manajemen destinasi wisata
+                                terpadu siap pakai untuk pengelola desa wisata.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                                        class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 4 - Produk 10 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Keripik Tempe"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-[#f59e0b] text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Pangan</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[10px] font-semibold px-2 py-0.5 rounded">Halal
+                                    Certified</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Keripik Tempe Sagu
+                                    Aneka Rasa</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Olahan tempe gurih renyah tanpa bahan
+                                pengawet dengan varian rasa rempah lokal.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                            class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 4 - Produk 11 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Sensor Air Tambak" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-blue-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Perikanan</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-purple-100 text-purple-700 text-[10px] font-semibold px-2 py-0.5 rounded">Paten
+                                    Terdaftar</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Sensor Kualitas Air
+                                    Tambak Udang</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Perangkat ukur salinitas, pH, dan suhu
+                                air berbasis telemetri otomatis real-time.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Baris 4 - Produk 12 -->
+                <div
+                    class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <a href="detail-produk.html" class="block relative">
+                            <img src="https://www.arfasuppliers.com/web/image/product.product/3123/image_1024/Biji%20Kopi%20Robusta%20Gayo?unique=0287f00" alt="Sabun Organik"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 left-3 bg-teal-700 text-white text-xs font-bold px-2.5 py-1 rounded">TeFa
+                                Bio-Industri</span>
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[10px] font-semibold px-2 py-0.5 rounded">Halal
+                                    Certified</span>
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded">BPOM</span>
+                            </div>
+                            <h3 class="font-bold text-[#0f2444] text-lg mb-2 line-clamp-1">
+                                <a href="detail-produk.html" class="hover:text-blue-600 transition">Sabun Organik
+                                    Ekstrak Rumput Laut</a>
+                            </h3>
+                            <p class="text-gray-600 text-xs mb-4 line-clamp-2">Sabun pembersih kulit berbahan dasar
+                                ekstrak rumput laut pesisir pantai Banyuwangi.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Lihat Selengkapnya</p>
+                            <!-- <p class="text-base font-bold text-[#0f2444]">Rp 25.000 <span
+                                    class="text-xs text-gray-400 font-normal">/ pcs</span></p> -->
+                        </div>
+                        <a href="detail-produk.html"
+                            class="bg-[#0f2444] hover:bg-blue-900 text-white p-2.5 rounded-lg transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Paginasi -->
+            <div class="mt-12 flex justify-center items-center space-x-2">
+                <a href="#"
+                    class="px-3 py-2 rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-100 transition text-sm">Sebelumnya</a>
+                <a href="#" class="px-4 py-2 rounded-lg bg-[#0f2444] text-white font-bold text-sm">1</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition text-sm">2</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition text-sm">3</a>
+                <a href="#"
+                    class="px-3 py-2 rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-100 transition text-sm">Selanjutnya</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-[#0f2444] text-gray-300 pt-16 pb-8 border-t-4 border-[#f59e0b]">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="https://via.placeholder.com/50x50?text=Logo" alt="Logo"
+                            class="h-12 w-12 rounded-full bg-white">
+                        <div>
+                            <h3 class="text-xl font-bold text-white leading-tight">UPA PRODUK UNGGULAN</h3>
+                            <span class="text-sm text-gray-400">Politeknik Negeri Banyuwangi</span>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-6 leading-relaxed max-w-md">
+                        Pusat informasi dan manajemen publikasi produk inovasi serta pengembangan Teaching Factory di
+                        lingkungan Politeknik Negeri Banyuwangi.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <p class="flex items-start"><svg class="w-5 h-5 text-[#f59e0b] mr-3 mt-0.5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg> Jl. Raya Jember KM 13, Kabat, Banyuwangi, Jawa Timur</p>
+                        <p class="flex items-center"><svg class="w-5 h-5 text-[#f59e0b] mr-3" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg> +62 812 3456 7890</p>
+                        <p class="flex items-center"><svg class="w-5 h-5 text-[#f59e0b] mr-3" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg> upa@poliwangi.ac.id</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white font-bold mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-12 after:h-0.5 after:bg-[#f59e0b]">
+                        Menu Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-[#f59e0b] transition">Beranda</a></li>
+                        <li><a href="visi-misi.html" class="hover:text-[#f59e0b] transition">Visi & Misi</a></li>
+                        <li><a href="struktur-organisasi.html" class="hover:text-[#f59e0b] transition">Struktur
+                                Organisasi</a></li>
+                        <li><a href="katalog.html" class="hover:text-[#f59e0b] transition text-[#f59e0b]">Katalog
+                                Produk</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-white font-bold mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-12 after:h-0.5 after:bg-[#f59e0b]">
+                        Tautan Terkait</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-[#f59e0b] transition">Website Utama Poliwangi</a>
+                        </li>
+                        <li><a href="struktur-organisasi.html" class="hover:text-[#f59e0b] transition">P3M Poliwangi</a>
+                        </li>
+                        <li><a href="direktorat-vokasi.html" class="hover:text-[#f59e0b] transition">Direktorat Vokasi
+                                Kemdikbud</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#1a3668] mt-8 pt-8 text-center text-xs md:text-sm text-gray-400">
+                <p>&copy; 2026 UPA Produk Unggulan - Politeknik Negeri Banyuwangi. Hak Cipta Dilindungi Undang-Undang.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Lab & Layanan - UPA Produk Unggulan Politeknik Negeri Banyuwangi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Navigation -->
+    <header class="bg-[#1e40af] text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    
+            <!-- Logo / Brand Text -->
+            <a href="index.html" class="flex flex-col group">
+                <span class="text-2xl font-bold tracking-tight text-white leading-tight">UPA Produk Unggulan</span>
+                <span class="text-xs text-blue-200 font-light">Politeknik Negeri Banyuwangi</span>
+            </a>
+    
+            <!-- Navigation Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm">
+                <a href="index.html" class="hover:text-blue-200 font-medium transition">Beranda</a>
+    
+                <!-- Dropdown Profil -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1.5 font-medium hover:text-blue-200 py-2 focus:outline-none">
+                        Profil
+                        <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block w-48 bg-white rounded-lg shadow-xl py-2 text-gray-800 border border-gray-100 z-50">
+                        <a href="profil.html#visi-misi" class="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">Visi
+                            & Misi</a>
+                        <a href="profil.html#struktur"
+                            class="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">Struktur Organisasi</a>
+                    </div>
+                </div>
+    
+                <!-- Dropdown Layanan (Aktif) -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1.5 font-semibold text-[#f59e0b] border-b-2 border-[#f59e0b] pb-1 py-2 focus:outline-none">
+                        Layanan
+                        <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                
+                    <!-- Sub-menu Dropdown Layanan (Ditambahkan hidden group-hover:block dan pt-2) -->
+                    <div class="absolute right-0 top-full pt-1 w-52 hidden group-hover:block z-50">
+                        <div class="bg-white rounded-lg shadow-xl py-1 text-gray-800 border border-gray-100">
+                            <a href="katalog-produk.html"
+                                class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition">
+                                Katalog Produk
+                            </a>
+                            <!-- Item Aktif dalam Dropdown -->
+                            <a href="uji-lab.html"
+                                class="block px-4 py-2.5 text-sm font-semibold text-blue-600 bg-blue-50/80 transition">
+                                Uji Lab / Layanan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <a href="fasilitas.html" class="hover:text-blue-200 font-medium transition">Fasilitas</a>
+                <a href="berita.html" class="hover:text-blue-200 font-medium transition">Berita</a>
+            </nav>
+    
+            <!-- Tombol Mobile Menu (Opsional untuk layar HP) -->
+            <button class="lg:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Header Terintegrasi -->
+    <!-- <header class="w-full z-50 sticky top-0 shadow-md">
+        <div class="bg-[#0f2444] text-white py-2 hidden md:block border-b border-[#1a3668]">
+            <div class="container mx-auto px-6 flex justify-between items-center text-sm">
+                <span>Jl. Raya Jember KM 13, Banyuwangi</span>
+                <span>upa@poliwangi.ac.id | +62 812 3456 7890</span>
+            </div>
+        </div>
+        <div class="bg-blue-800 text-white">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold tracking-wider">UPA Produk Unggulan</a>
+                    <p class="text-xs text-blue-200">Politeknik Negeri Banyuwangi</p>
+                </div>
+                <nav class="hidden lg:flex space-x-6 items-center">
+                    <a href="index.html" class="hover:text-blue-300 font-medium">Beranda</a>
+                    <a href="katalog-produk.html" class="hover:text-blue-300 font-medium">Katalog Produk</a>
+                    <a href="uji-lab.html" class="text-[#f59e0b] font-medium border-b-2 border-[#f59e0b] pb-1">Uji Lab /
+                        Layanan</a>
+                    <a href="berita.html" class="hover:text-blue-300 font-medium">Berita</a>
+                </nav>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- Header Banner -->
+    <section class="bg-gradient-to-r from-[#0f2444] to-blue-800 text-white py-12 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-2">Layanan Pengujian & Laboratorium</h1>
+            <p class="text-blue-200 text-sm max-w-xl mx-auto">Pilih jenis pengujian laboratorium sesuai kebutuhan
+                industri, akademis, maupun UMKM Anda.</p>
+        </div>
+    </section>
+
+    <!-- Grid Card Uji Layanan -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card Uji Layanan 1 -->
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://islandsunindonesia.com/wp-content/uploads/2021/04/awww.jpg" alt="Uji Pangan"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-blue-900 text-white text-xs px-2.5 py-1 rounded font-semibold">ISO
+                                17025</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab Pangan &
+                                Bio-Proses</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Proksimat & Nutrisi Pangan</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Analisis kadar air, abu, protein, lemak, dan karbohidrat untuk kebutuhan standar kemasan
+                                UMKM dan industri.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 3 - 5 Hari Kerja</div>
+                                <div><strong>Metode:</strong> SNI / AOAC Standar</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                            <span class="text-sm font-bold text-[#0f2444]">Rp 150.000 <span
+                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                        </div> -->
+                        <!-- Link Mengarah ke Detail Uji Layanan -->
+                        <a href="detail-uji-lab2.html?id=uji-proksimat"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Uji Layanan 2 -->
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://asset.kompas.com/crops/JI4c9hs4boQpH8meF44t46L1d5E=/0x154:940x781/1200x800/data/photo/2023/11/30/656834194af5b.jpeg" alt="Uji Air"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-green-700 text-white text-xs px-2.5 py-1 rounded font-semibold">Tersedia</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab
+                                Lingkungan</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Kualitas Air & Limbah Cair</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Pengujian parameter fisika, kimia (pH, BOD, COD, Logam Berat) untuk kelayakan air minum
+                                dan lingkungan.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 2 - 4 Hari Kerja</div>
+                                <div><strong>Metode:</strong> Spectrophotometry / Titrasi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                            <span class="text-sm font-bold text-[#0f2444]">Rp 200.000 <span
+                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                        </div> -->
+                        <a href="detail-uji-lab2.html?id=uji-air"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Uji Layanan 3 -->
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://testingindonesia.co.id/wp-content/uploads/2020/09/compression-testing.png" alt="Uji Material"
+                                class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-blue-900 text-white text-xs px-2.5 py-1 rounded font-semibold">ISO
+                                17025</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab Manufaktur &
+                                Otomasi</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Tarik & Kekerasan Material</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Pengujian kekuatan mekanis bahan logam, plastik, dan komponen teknik menggunakan
+                                Universal Testing Machine.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 1 - 3 Hari Kerja</div>
+                                <div><strong>Metode:</strong> ASTM / JIS Standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                            <span class="text-sm font-bold text-[#0f2444]">Rp 250.000 <span
+                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                        </div> -->
+                        <a href="detail-uji-lab2.html?id=uji-material"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Uji Layanan 4 -->
+
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://testindo.co.id/wp-content/uploads/2024/06/Banner-Thumbnail-Testindo-2024-06-11T151602.949.jpg" alt="Uji Material"
+                                class="w-full h-48 object-cover">
+                            <span class="absolute top-3 right-3 bg-blue-900 text-white text-xs px-2.5 py-1 rounded font-semibold">ISO
+                                17025</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab Manufaktur &
+                                Otomasi</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Tarik & Kekerasan Material</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Pengujian kekuatan mekanis bahan logam, plastik, dan komponen teknik menggunakan
+                                Universal Testing Machine.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 1 - 3 Hari Kerja</div>
+                                <div><strong>Metode:</strong> ASTM / JIS Standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                                            <span class="text-sm font-bold text-[#0f2444]">Rp 250.000 <span
+                                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                                        </div> -->
+                        <a href="detail-uji-lab2.html?id=uji-material"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Uji Layanan 5 -->
+
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://testindo.co.id/wp-content/uploads/2024/06/Banner-Thumbnail-Testindo-2024-06-11T151602.949.jpg" alt="Uji Material"
+                                class="w-full h-48 object-cover">
+                            <span class="absolute top-3 right-3 bg-blue-900 text-white text-xs px-2.5 py-1 rounded font-semibold">ISO
+                                17025</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab Manufaktur &
+                                Otomasi</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Tarik & Kekerasan Material</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Pengujian kekuatan mekanis bahan logam, plastik, dan komponen teknik menggunakan
+                                Universal Testing Machine.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 1 - 3 Hari Kerja</div>
+                                <div><strong>Metode:</strong> ASTM / JIS Standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                                            <span class="text-sm font-bold text-[#0f2444]">Rp 250.000 <span
+                                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                                        </div> -->
+                        <a href="detail-uji-lab2.html?id=uji-material"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Uji Layanan 6 -->
+
+                <div
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+                    <div>
+                        <div class="relative">
+                            <img src="https://testindo.co.id/wp-content/uploads/2024/06/Banner-Thumbnail-Testindo-2024-06-11T151602.949.jpg" alt="Uji Material"
+                                class="w-full h-48 object-cover">
+                            <span class="absolute top-3 right-3 bg-blue-900 text-white text-xs px-2.5 py-1 rounded font-semibold">ISO
+                                17025</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Lab Manufaktur &
+                                Otomasi</span>
+                            <h3 class="text-lg font-bold text-[#0f2444] mt-1 mb-2">Uji Tarik & Kekerasan Material</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                Pengujian kekuatan mekanis bahan logam, plastik, dan komponen teknik menggunakan
+                                Universal Testing Machine.
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1 mb-4 text-gray-700">
+                                <div><strong>Estimasi Waktu:</strong> 1 - 3 Hari Kerja</div>
+                                <div><strong>Metode:</strong> ASTM / JIS Standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <!-- <div>
+                                            <span class="text-[10px] text-gray-400 block">Mulai Dari</span>
+                                            <span class="text-sm font-bold text-[#0f2444]">Rp 250.000 <span
+                                                    class="text-xs font-normal text-gray-500">/ sampel</span></span>
+                                        </div> -->
+                        <a href="detail-uji-lab2.html?id=uji-material"
+                            class="bg-[#0f2444] hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition flex items-center gap-1">
+                            Lihat Detail
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
